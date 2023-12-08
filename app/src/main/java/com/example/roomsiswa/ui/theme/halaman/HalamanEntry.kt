@@ -22,8 +22,10 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.roomsiswa.R
+import com.example.roomsiswa.model.DetailSiswa
 import com.example.roomsiswa.model.EntryViewModel
 import com.example.roomsiswa.model.PenyediaViewModel
+import com.example.roomsiswa.model.UIStateSiswa
 import com.example.roomsiswa.navigasi.DestinasiNavigasi
 import com.example.roomsiswa.navigasi.SiswaTopAppBar
 import kotlinx.coroutines.launch
@@ -67,13 +69,11 @@ fun EntrySiswaScreen(
                 .fillMaxWidth()
         )
     }
-
 }
-
 @Composable
 fun EntrySiswaBody(
-    uiStateSiswa: EntryViewModel.UIStateSiswa,
-    onSiswaValueChange: (EntryViewModel.DetailSiswa) -> Unit,
+    uiStateSiswa: UIStateSiswa,
+    onSiswaValueChange: (DetailSiswa) -> Unit,
     onSaveClick: () -> Unit,
     modifier: Modifier
 ) {
@@ -81,7 +81,6 @@ fun EntrySiswaBody(
         verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_large)),
         modifier = modifier.padding(dimensionResource(id = R.dimen.padding_medium))
     ) {
-
         FormInputSiswa(
             detailSiswa = uiStateSiswa.detailSiswa,
             onValueChange = onSiswaValueChange,
@@ -98,12 +97,13 @@ fun EntrySiswaBody(
     }
 }
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FormInputSiswa(
-    detailSiswa: EntryViewModel.DetailSiswa,
+    detailSiswa: DetailSiswa,
     modifier: Modifier = Modifier,
-    onValueChange: (EntryViewModel.DetailSiswa) -> Unit = {},
+    onValueChange: (DetailSiswa) -> Unit = {},
     enabled: Boolean = true
 ) {
     Column(

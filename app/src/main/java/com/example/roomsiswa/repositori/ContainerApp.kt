@@ -1,4 +1,4 @@
-package com.example.roomsiswa.repsotori
+package com.example.roomsiswa.repositori
 
 import android.content.Context
 import com.example.roomsiswa.data.DatabaseSiswa

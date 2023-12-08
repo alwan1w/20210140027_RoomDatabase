@@ -1,4 +1,4 @@
-package com.example.roomsiswa.repsotori
+package com.example.roomsiswa.repositori
 
 import com.example.roomsiswa.data.Siswa
 import com.example.roomsiswa.data.SiswaDao
